@@ -1,19 +1,24 @@
 
 const CORRECT_FLAG = "FLAG{hidden_in_metadata}";
 
-function checkFlag() {
-  const input = document
-    .getElementById("flagInput")
-    .value.trim();
+const flagForm = document.getElementById("flagForm");
+const flagInput = document.getElementById("flagInput");
+const result = document.getElementById("result");
 
-  const result = document.getElementById("result");
+flagForm.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-  if (input === CORRECT_FLAG) {
-    result.textContent = "✅ Correct! Flag berhasil ditemukan!";
-    result.style.color = "#4ade80";
+  const answer = flagInput.value.trim();
+
+  if (answer === CORRECT_FLAG) {
+    result.textContent =
+      "✓ CORRECT! Kamu berhasil menemukan flag.";
+
+    result.className = "success";
   } else {
-    result.textContent = "❌ Incorrect flag. Coba lagi!";
-    result.style.color = "#f87171";
-  }
-}
+    result.textContent =
+      "✗ INCORRECT! Periksa kembali gambar dan hint.";
 
+    result.className = "error";
+  }
+});
