@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Forgotten File | CTF</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #080c12;
+      color: #e5edf7;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 35px auto;
+    }
+
+    .tag {
+      color: #4ade80;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 8vw, 50px);
+      margin: 16px 0 8px;
+    }
+
+    h1 span {
+      color: #4ade80;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      line-height: 1.8;
+    }
+
+    .card {
+      background: #101720;
+      border: 1px solid #263445;
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: 19px;
+      margin-top: 0;
+      color: #f1f5f9;
+    }
+
+    p {
+      line-height: 1.8;
+      color: #bdc9d8;
+    }
+
+    .terminal {
+      background: #080c12;
+      border: 1px solid #263445;
+      border-radius: 8px;
+      padding: 15px;
+      color: #4ade80;
+      font-family: monospace;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #4ade80;
+      color: #07110b;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #86efac;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      background: #080c12;
+      color: white;
+      border: 1px solid #354459;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4ade80;
+    }
+
+    details {
+      border-top: 1px solid #263445;
+      padding: 15px 0;
+    }
+
+    summary {
+      color: #4ade80;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .success {
+      color: #4ade80;
+    }
+
+    .error {
+      color: #f87171;
+    }
+
+    .download-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 2;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <div class="tag">CYBER ARCHIVE / CASE 001</div>
+
+    <h1>THE FORGOTTEN <span>FILE</span></h1>
+
+    <p class="subtitle">
+      Sebuah file misterius ditemukan di dalam arsip
+      komputer lama. Bisakah kamu menemukan rahasia
+      yang tersembunyi di baliknya?
+    </p>
+
+    <section class="card">
+      <h2>01 / The Origin</h2>
+
+      <p>
+        Pada tahun 2019, seorang peneliti digital bernama
+        Arsyley menemukan direktori bernama lost_archive
+        di sebuah komputer yang sudah lama ditinggalkan.
+      </p>
+
+      <p>
+        Di dalamnya terdapat satu file teks berisi
+        deretan karakter yang tidak dapat dibaca secara
+        langsung. Tidak ada petunjuk selain sebuah
+        catatan pendek dari pemilik komputer.
+      </p>
+
+      <p>
+        Arsyley menduga deretan karakter itu menyimpan
+        sebuah gambar. Namun, ia percaya gambar tersebut
+        bukanlah akhir dari penyelidikan.
+      </p>
+
+      <div class="terminal">
+        "The image is only the beginning."<br>
+        "Look beyond what your eyes can see."
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>02 / Mission</h2>
+
+      <p>
+        Pulihkan gambar dari file Base64, periksa
+        informasi di dalamnya, lalu temukan flag rahasia.
+      </p>
+
+      <p>
+        Format flag:
+        <b>FLAG{...}</b>
+      </p>
+
+      <p>
+        Tidak perlu menebak. Cari bukti dan ikuti
+        petunjuk yang tersedia.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>03 / Evidence Download</h2>
+
+      <p>
+        Unduh bukti digital untuk memulai investigasi.
+        File ini berisi data gambar yang dikodekan
+        menggunakan Base64.
+      </p>
+
+      <a
+        class="download-link"
+        href="./forgotten_file.txt"
+        download="forgotten_file.txt"
+      >
+        <button type="button">
+          ↓ DOWNLOAD FORGOTTEN_FILE.TXT
+        </button>
+      </a>
+
+      <p>
+        <small>
+          Format: TXT | Isi: Base64
+        </small>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>04 / Hints</h2>
+
+      <details>
+        <summary>Hint 1 — Bagaimana memulai?</summary>
+        <p>
+          Base64 adalah cara mengubah data menjadi
+          teks. Cobalah mengembalikan teks itu
+          menjadi data gambar.
+        </p>
+      </details>
+
+      <details>
+        <summary>Hint 2 — Apa yang harus diperiksa?</summary>
+        <p>
+          Jangan hanya melihat gambar. Periksa juga
+          metadata atau informasi tambahan yang
+          tersimpan di dalam file.
+        </p>
+      </details>
+
+      <details>
+        <summary>Hint 3 — Cari pesan tersembunyi</summary>
+        <p>
+          Gunakan alat pembaca metadata untuk mencari
+          kolom komentar atau informasi tambahan.
+          Perhatikan format flag yang diminta.
+        </p>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>05 / Submit Flag</h2>
+
+      <p>
+        Sudah menemukan flag?
+        Masukkan jawabanmu di bawah ini.
+      </p>
+
+      <form id="flagForm">
+        <input
+          type="text"
+          id="flagInput"
+          placeholder="FLAG{...}"
+          autocomplete="off"
+          spellcheck="false"
+          required
+        >
+
+        <button type="submit">
+          VERIFIKASI FLAG
+        </button>
+      </form>
+
+      <p id="result" aria-live="polite"></p>
+    </section>
+
+    <footer>
+      THE FORGOTTEN FILE © 2026<br>
+      DIGITAL FORENSICS CHALLENGE<br>
+      Learn • Investigate • Discover
+    </footer>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
